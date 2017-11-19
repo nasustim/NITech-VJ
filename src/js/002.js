@@ -6,7 +6,7 @@ var radius = 500;
 var angle = 0;
 var plane = null;
 
-var scale = 300000;
+var scale = 1;
 
 const SIZE = 800*3;
 
@@ -87,6 +87,8 @@ var geoUpdate = (wd) =>{
         let vertex = plane.geometry.vertices[i];
         let fl = (Math.floor(Math.random()*10)%2==0)?-1:1;
         let fs = (Math.floor(Math.random()*10)%2==0)?-1:1;
+        // vertex.z = wd[i%wd.length]*scale*fl;
+        // vertex.y = wd[i%wd.length]*scale*fs;
         vertex.z = wd[i%wd.length]*scale*fl;
         vertex.y = wd[i%wd.length]*scale*fs;
         //vertex.x = wd[i%wd.length]*1000000*fs;

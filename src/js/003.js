@@ -43,10 +43,10 @@ var draw = () =>{
 
         console.log(s[0]);
 
-        if (s[0] > 0.001) {
+        //if (s[0] > 100) {
             ctx.fillStyle = "rgb(255,255,255)";
-            ctx.fillRect(100, 100,w - 200 , h - 200);
-        }
+            ctx.fillRect(100, 100,(30*s[0] - 200) , (30*s[0] - 200));
+        //}
     }
 
     count++;

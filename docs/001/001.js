@@ -8,7 +8,7 @@ var radius = 500;
 var angle = 0;
 var plane = null;
 
-var scale = 300000;
+var scale = 3;
 
 var SIZE = 15;
 
