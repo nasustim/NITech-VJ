@@ -3,10 +3,18 @@ var ctx;
 
 var count = 0;
 
-var x = [0,0,0,0];
+var x = [0,1,2,3];
 
 var w = window.innerWidth;
 var h = window.innerHeight;
+
+var bx = [50,w/2+50,50,w/2+50];
+var by = [50,50,h/2+50,h/2+50];
+var bw = w / 2 - 100;
+var bh = h / 2 - 100;
+
+var flag = false;
+var c1=0;
 
 var setup = () => {
     let container = document.getElementById('container');
@@ -20,40 +28,61 @@ var setup = () => {
 
     ctx = canvas.getContext("2d");
 
+
+    ctx.globalCompositeOperation = 'source-over';
+
     draw();
 };
 
 var draw = () =>{
-    if(count % 3 === 1) {
-
-
         w = window.innerWidth;
         h = window.innerHeight;
 
-        $("canvas").attr({
+        bx = [50,w/2+50,50,w/2+50];
+        by = [50,50,h/2+50,h/2+50];
+        bw = w / 2 - 100;
+        bh = h / 2 - 100;
+
+        /*$("canvas").attr({
             "width": w,
             "height": h
-        });
+        });*/
 
-
-        ctx.fillStyle = "rgb(0,0,0)";
-        ctx.fillRect(0, 0, window.innerWidth, window.innerHeight);
 
         let s = getSoundData();
 
-        console.log(s[0]);
+        //console.log(s[0]);
+        //console.log(count);
+    //console.log(bx[x[count]]);
+    //console.log(bw[x[count]]);
 
-        //if (s[0] > 100) {
-            ctx.fillStyle = "rgb(255,255,255)";
-            ctx.fillRect(100, 100,(30*s[0] - 200) , (30*s[0] - 200));
-        //}
+        if (s[0] > 100 && flag === false) {
+
+            flag = true;
+
+
+            count++;
+            if(count >= 4){
+                count = 0;
+            }
+            if(count === 0){
+                ctx.fillStyle = "rgb(255,255,255)";
+                ctx.fillRect(0, 0,w , h);
+            }
+            ctx.fillStyle = "rgb(0,0,0)";
+            ctx.fillRect(bx[x[count]],by[x[count]],bw,bh);
+
+        }
+
+
+    if(flag === true){
+            c1++;
+            if(c1 > 5){
+                c1 = 0;
+                flag = false;
+            }
+
     }
-
-    count++;
-    if(count > 3){
-        count = 0;
-    }
-
     window.requestAnimationFrame(draw);
 };
 
