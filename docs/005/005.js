@@ -21,11 +21,6 @@ var yc = [];
 
 var MAX = 300;
 
-var count = 0;
-
-var w = window.innerWidth;
-var h = window.innerHeight;
-
 var xp = [];
 var yp = [];
 xp.push(Math.random() * MAX - MAX / 2);yp.push(Math.random() * MAX - MAX / 2);
@@ -42,12 +37,7 @@ var init = function init() {
     scene = new THREE.Scene();
     camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 0.1, 2000);
     scene.add(camera);
-
-    var light = new THREE.DirectionalLight(0xffffff);
-    light.position.set(1000, 1000, 1000).normalize();
-    scene.add(light);
-
-    //camera.position.z = radius;
+    camera.position.z = radius;
 
     renderer = new THREE.WebGLRenderer({ antialias: true });
     renderer.setSize(window.innerWidth, window, innerHeight);
@@ -110,24 +100,14 @@ var geoInit = function geoInit() {
         let wire = new THREE.MeshBasicMaterial({color: 0xffffff, wireframe: true});
         let wireMesh = new THREE.Mesh(geo, wire);
         scene.add(wireMesh);*/
-
-    xp = [300, -100, -100];
-    yp = [0, -200, 100];
 };
 
 var geoUpdate = function geoUpdate(wd) {
 
-    if (wd[0] > 50) {
-        count++;
-        count = count > 3600 ? 0 : count;
-    } else {
-        count = 0;
-    }
     geo = new THREE.Geometry();
 
     scene.remove(plane);
-    //scene.remove(wireMesh);
-
+    scene.remove(wireMesh);
 
     // for(let i = 0;i<xc.length;i+=3){
     //   xp.push(xc[i]-50); yp.push(yc[i]);
@@ -137,20 +117,14 @@ var geoUpdate = function geoUpdate(wd) {
 
     //console.log(xp);
 
-    for (var i = 0; i < 3; i++) {
+    for (var i = 0; i < xp.length; i++) {
 
-        var x = MAX * Math.cos(count / 10 * i);
-        var y = MAX * Math.sin(count / 10 * i);
-
-        console.log(w / 2 + x);
-        geo.vertices.push(new THREE.Vector3( /*xp[i]*/x, /*yp[i]*/y, 0));
+        geo.vertices.push(new THREE.Vector3(xp[i], yp[i], 0));
     }
 
-    //for(let i = 0;i<xp.length;i+=3){
-    //geo.faces.push(new THREE.Face3(i,i+1,i+2));
-    geo.faces.push(new THREE.Face3(0, 1, 2));
-
-    //}
+    for (var _i = 0; _i < xp.length; _i += 3) {
+        geo.faces.push(new THREE.Face3(_i, _i + 1, _i + 2));
+    }
 
     //console.log(xp);
     //console.log(yp);
@@ -162,21 +136,21 @@ var geoUpdate = function geoUpdate(wd) {
     // wireMesh = new THREE.Mesh(geo, wire);
     // scene.add(wireMesh);
 
-    var mat = new THREE.MeshBasicMaterial({ color: 0x7777ff });
+    var mat = new THREE.MeshBasicMaterial({ color: 0x7777ff, wireframe: true });
     plane = new THREE.Mesh(geo, mat);
     scene.add(plane);
 
     plane.geometry.verticesNeedUpdate = true;
-    //for(let i = 0;i<plane.geometry.vertices.length;i++){
-    //  let vertex = plane.geometry.vertices[i];
-    // let fl = (Math.floor(Math.random()*10)%2===0)?-1:1;
-    //let fs = (Math.floor(Math.random()*10)%2===0)?-1:1;
-    // vertex.z = wd[i%wd.length]*scale*fl;
-    // vertex.y = wd[i%wd.length]*scale*fs;
-    //    vertex.z = wd[0]*scale*fl;
-    //   vertex.y = ((wd[1]+wd[0])/2)*scale*fs*xp[i];
-    //vertex.x = wd[i%wd.length]*1000000*fs;
-    //}
+    for (var _i2 = 0; _i2 < plane.geometry.vertices.length; _i2++) {
+        var vertex = plane.geometry.vertices[_i2];
+        var fl = Math.floor(Math.random() * 10) % 2 === 0 ? -1 : 1;
+        var fs = Math.floor(Math.random() * 10) % 2 === 0 ? -1 : 1;
+        // vertex.z = wd[i%wd.length]*scale*fl;
+        // vertex.y = wd[i%wd.length]*scale*fs;
+        vertex.z = wd[0] * scale * fl;
+        vertex.y = (wd[1] + wd[0]) / 2 * scale * fs * xp[_i2];
+        //vertex.x = wd[i%wd.length]*1000000*fs;
+    }
 };
 
 var setup = function setup() {
@@ -206,18 +180,17 @@ var keyd = function keyd() {
     console.log("" + event.key);
 
     if (event.key == "1") {
-        /*      xp.push((Math.random()*MAX-MAX/2)); yp.push((Math.random()*MAX-MAX/2));
-              xp.push((Math.random()*MAX-MAX/2)); yp.push((Math.random()*MAX-MAX/2));
-              xp.push((Math.random()*MAX-MAX/2)); yp.push((Math.random()*MAX-MAX/2));
-              SIZE+=3;
-        */
+        xp.push(Math.random() * MAX - MAX / 2);yp.push(Math.random() * MAX - MAX / 2);
+        xp.push(Math.random() * MAX - MAX / 2);yp.push(Math.random() * MAX - MAX / 2);
+        xp.push(Math.random() * MAX - MAX / 2);yp.push(Math.random() * MAX - MAX / 2);
+        SIZE += 3;
     } else if (event.key == "0") {
-        /*
-                xp=[(Math.random()*MAX-MAX/2)]; yp=[(Math.random()*MAX-MAX/2)];
-                xp.push((Math.random()*MAX-MAX/2)); yp.push((Math.random()*MAX-MAX/2));
-                xp.push((Math.random()*MAX-MAX/2)); yp.push((Math.random()*MAX-MAX/2));
-        
-                SIZE=3;*/
+
+        xp = [Math.random() * MAX - MAX / 2];yp = [Math.random() * MAX - MAX / 2];
+        xp.push(Math.random() * MAX - MAX / 2);yp.push(Math.random() * MAX - MAX / 2);
+        xp.push(Math.random() * MAX - MAX / 2);yp.push(Math.random() * MAX - MAX / 2);
+
+        SIZE = 3;
     }
 
     console.log(xp);

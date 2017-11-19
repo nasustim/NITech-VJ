@@ -38,5 +38,15 @@
       "SCRIPTS": [
         "../three/build/three.min.js"
       ]
+    },
+
+    "005":{
+      "ID": "005",
+      "STYLES": [
+
+      ],
+      "SCRIPTS": [
+        "../three/build/three.min.js"
+      ]
     }
   }
