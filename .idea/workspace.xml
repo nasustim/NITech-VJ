@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8b387227-0590-447c-bbaf-0a282ac737e9" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/watcherTasks.xml" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/json/objects.json" afterPath="$PROJECT_DIR$/src/json/objects.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/004/004.js" afterPath="$PROJECT_DIR$/docs/004/004.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/js/004.js" afterPath="$PROJECT_DIR$/src/js/004.js" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -18,8 +18,8 @@
       <file leaf-file-name="004.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/js/004.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="713">
-              <caret line="204" column="73" lean-forward="false" selection-start-line="204" selection-start-column="73" selection-end-line="204" selection-end-column="73" />
+            <state relative-caret-position="125">
+              <caret line="20" column="13" lean-forward="false" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
               <folding />
             </state>
           </provider>
@@ -165,12 +165,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1511089364616</updated>
-      <workItem from="1511089365688" duration="4105000" />
+      <workItem from="1511089365688" duration="4822000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="4105000" />
+    <option name="totallyTimeSpent" value="4822000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
@@ -226,8 +226,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/js/004.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="713">
-          <caret line="204" column="73" lean-forward="false" selection-start-line="204" selection-start-column="73" selection-end-line="204" selection-end-column="73" />
+        <state relative-caret-position="125">
+          <caret line="20" column="13" lean-forward="false" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
           <folding />
         </state>
       </provider>

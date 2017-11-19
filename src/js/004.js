@@ -18,13 +18,13 @@ var wire, wireMesh;
 var xc = [];
 var yc = [];
 
-
+const MAX = 300;
 
 var xp = [];
 var yp = [];
-xp.push((Math.random()*100-50)); yp.push((Math.random()*100-50));
-xp.push((Math.random()*100-50)); yp.push((Math.random()*100-50));
-xp.push((Math.random()*100-50)); yp.push((Math.random()*100-50));
+xp.push((Math.random()*MAX-MAX/2)); yp.push((Math.random()*MAX-MAX/2));
+xp.push((Math.random()*MAX-MAX/2)); yp.push((Math.random()*MAX-MAX/2));
+xp.push((Math.random()*MAX-MAX/2)); yp.push((Math.random()*MAX-MAX/2));
 
 
 var resize = () => {
@@ -154,12 +154,12 @@ var geoUpdate = (wd) =>{
     plane.geometry.verticesNeedUpdate = true;
     for(let i = 0;i<plane.geometry.vertices.length;i++){
         let vertex = plane.geometry.vertices[i];
-        let fl = (Math.floor(Math.random()*10)%2==0)?-1:1;
-        let fs = (Math.floor(Math.random()*10)%2==0)?-1:1;
+        let fl = (Math.floor(Math.random()*10)%2===0)?-1:1;
+        let fs = (Math.floor(Math.random()*10)%2===0)?-1:1;
         // vertex.z = wd[i%wd.length]*scale*fl;
         // vertex.y = wd[i%wd.length]*scale*fs;
         vertex.z = wd[0]*scale*fl;
-        vertex.y = wd[0]*scale*fs*xp[i];
+        vertex.y = ((wd[1]+wd[0])/2)*scale*fs*xp[i];
         //vertex.x = wd[i%wd.length]*1000000*fs;
     }
 }
@@ -193,19 +193,21 @@ var keyd = () =>{
     console.log(`${event.key}`);
 
     if(event.key=="1") {
-        xp.push((Math.random()*100-50)); yp.push((Math.random()*100-50));
-        xp.push((Math.random()*100-50)); yp.push((Math.random()*100-50));
-        xp.push((Math.random()*100-50)); yp.push((Math.random()*100-50));
+        xp.push((Math.random()*MAX-MAX/2)); yp.push((Math.random()*MAX-MAX/2));
+        xp.push((Math.random()*MAX-MAX/2)); yp.push((Math.random()*MAX-MAX/2));
+        xp.push((Math.random()*MAX-MAX/2)); yp.push((Math.random()*MAX-MAX/2));
         SIZE+=3;
 
     }else if(event.key == "0"){
 
-        xp=[(Math.random()*100-50)]; yp=[(Math.random()*100-50)];
-        xp.push((Math.random()*100-50)); yp.push((Math.random()*100-50));
-        xp.push((Math.random()*100-50)); yp.push((Math.random()*100-50));
+        xp=[(Math.random()*MAX-MAX/2)]; yp=[(Math.random()*MAX-MAX/2)];
+        xp.push((Math.random()*MAX-MAX/2)); yp.push((Math.random()*MAX-MAX/2));
+        xp.push((Math.random()*MAX-MAX/2)); yp.push((Math.random()*MAX-MAX/2));
 
         SIZE=3;
     }
+
+    console.log(xp);
 
     //if(event.key == "1"){
 //    angle = 2 * Math.PI * parseInt(event.key) / 9;

@@ -19,11 +19,13 @@ var wire, wireMesh;
 var xc = [];
 var yc = [];
 
+var MAX = 300;
+
 var xp = [];
 var yp = [];
-xp.push(Math.random() * 100 - 50);yp.push(Math.random() * 100 - 50);
-xp.push(Math.random() * 100 - 50);yp.push(Math.random() * 100 - 50);
-xp.push(Math.random() * 100 - 50);yp.push(Math.random() * 100 - 50);
+xp.push(Math.random() * MAX - MAX / 2);yp.push(Math.random() * MAX - MAX / 2);
+xp.push(Math.random() * MAX - MAX / 2);yp.push(Math.random() * MAX - MAX / 2);
+xp.push(Math.random() * MAX - MAX / 2);yp.push(Math.random() * MAX - MAX / 2);
 
 var resize = function resize() {
     camera.aspect = window.innerWidth / window.innerHeight;
@@ -141,12 +143,12 @@ var geoUpdate = function geoUpdate(wd) {
     plane.geometry.verticesNeedUpdate = true;
     for (var _i2 = 0; _i2 < plane.geometry.vertices.length; _i2++) {
         var vertex = plane.geometry.vertices[_i2];
-        var fl = Math.floor(Math.random() * 10) % 2 == 0 ? -1 : 1;
-        var fs = Math.floor(Math.random() * 10) % 2 == 0 ? -1 : 1;
+        var fl = Math.floor(Math.random() * 10) % 2 === 0 ? -1 : 1;
+        var fs = Math.floor(Math.random() * 10) % 2 === 0 ? -1 : 1;
         // vertex.z = wd[i%wd.length]*scale*fl;
         // vertex.y = wd[i%wd.length]*scale*fs;
         vertex.z = wd[0] * scale * fl;
-        vertex.y = wd[0] * scale * fs * xp[_i2];
+        vertex.y = (wd[1] + wd[0]) / 2 * scale * fs * xp[_i2];
         //vertex.x = wd[i%wd.length]*1000000*fs;
     }
 };
@@ -178,18 +180,20 @@ var keyd = function keyd() {
     console.log("" + event.key);
 
     if (event.key == "1") {
-        xp.push(Math.random() * 100 - 50);yp.push(Math.random() * 100 - 50);
-        xp.push(Math.random() * 100 - 50);yp.push(Math.random() * 100 - 50);
-        xp.push(Math.random() * 100 - 50);yp.push(Math.random() * 100 - 50);
+        xp.push(Math.random() * MAX - MAX / 2);yp.push(Math.random() * MAX - MAX / 2);
+        xp.push(Math.random() * MAX - MAX / 2);yp.push(Math.random() * MAX - MAX / 2);
+        xp.push(Math.random() * MAX - MAX / 2);yp.push(Math.random() * MAX - MAX / 2);
         SIZE += 3;
     } else if (event.key == "0") {
 
-        xp = [Math.random() * 100 - 50];yp = [Math.random() * 100 - 50];
-        xp.push(Math.random() * 100 - 50);yp.push(Math.random() * 100 - 50);
-        xp.push(Math.random() * 100 - 50);yp.push(Math.random() * 100 - 50);
+        xp = [Math.random() * MAX - MAX / 2];yp = [Math.random() * MAX - MAX / 2];
+        xp.push(Math.random() * MAX - MAX / 2);yp.push(Math.random() * MAX - MAX / 2);
+        xp.push(Math.random() * MAX - MAX / 2);yp.push(Math.random() * MAX - MAX / 2);
 
         SIZE = 3;
     }
+
+    console.log(xp);
 
     //if(event.key == "1"){
     //    angle = 2 * Math.PI * parseInt(event.key) / 9;
