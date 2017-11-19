@@ -3,10 +3,22 @@
 var canvas;
 var ctx;
 
+var count = 0;
+
+var x = [0, 0, 0, 0];
+
+var w = window.innerWidth;
+var h = window.innerHeight;
+
 var setup = function setup() {
     var container = document.getElementById('container');
     canvas = document.createElement("canvas");
     container.appendChild(canvas);
+
+    $("canvas").attr({
+        "width": w,
+        "height": h
+    });
 
     ctx = canvas.getContext("2d");
 
@@ -14,21 +26,32 @@ var setup = function setup() {
 };
 
 var draw = function draw() {
+    if (count % 3 === 1) {
 
-    ctx.clearRect(0, 0, window.innerWidth, window.innerHeight);
+        w = window.innerWidth;
+        h = window.innerHeight;
 
-    var s = getSoundData();
+        $("canvas").attr({
+            "width": w,
+            "height": h
+        });
 
-    console.log(s[0]);
+        ctx.fillStyle = "rgb(0,0,0)";
+        ctx.fillRect(0, 0, window.innerWidth, window.innerHeight);
 
-<<<<<<< HEAD:docs/003/003.js
-    if (s[0] > 4) {
+        var s = getSoundData();
 
-=======
-    if (s[0] > 0.01) {
->>>>>>> 416ff20f99ed73b57f96f9f11e1ebbd3930e9648:dist/003/003.js
-        ctx.fillStyle = "rgb(255,255,255)";
-        ctx.fillRect(20, 20, 80, 40);
+        console.log(s[0]);
+
+        if (s[0] > 0.001) {
+            ctx.fillStyle = "rgb(255,255,255)";
+            ctx.fillRect(100, 100, w - 200, h - 200);
+        }
+    }
+
+    count++;
+    if (count > 3) {
+        count = 0;
     }
 
     window.requestAnimationFrame(draw);
