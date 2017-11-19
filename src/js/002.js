@@ -115,6 +115,18 @@ var draw = () =>{
 
     renderer.render(scene,camera);
     window.requestAnimationFrame(draw);
-}
+};
+
+
+
+var keyd = () =>{
+    console.log(`${event.key}`);
+
+    //if(event.key == "1"){
+    angle = 2 * Math.PI * parseInt(event.key) / 9;
+    //}
+};
+
+document.onkeydown = keyd;
 
 setup();

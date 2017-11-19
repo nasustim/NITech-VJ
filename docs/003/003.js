@@ -56,7 +56,7 @@ var draw = function draw() {
     //console.log(bx[x[count]]);
     //console.log(bw[x[count]]);
 
-    if (s[0] > 100 && flag === false) {
+    if (s[0] > 120 && flag === false) {
 
         flag = true;
 
@@ -74,12 +74,37 @@ var draw = function draw() {
 
     if (flag === true) {
         c1++;
-        if (c1 > 5) {
+        if (c1 > 10) {
             c1 = 0;
             flag = false;
         }
     }
     window.requestAnimationFrame(draw);
 };
+
+var keyd = function keyd() {
+    console.log("" + event.key);
+
+    if (event.key === "1") {
+        x = [0, 1, 2, 3];
+    }
+    if (event.key === "2") {
+        x = [0, 2, 1, 3];
+    }
+    if (event.key === "3") {
+        x = [0, 1, 3, 2];
+    }
+    if (event.key === "4") {
+        x = [0, 3, 1, 2];
+    }
+    if (event.key === "5") {
+        x = [0, 3, 2, 1];
+    }
+    if (event.key === "0") {
+        x = [0, 1, 2, 3];
+    }
+};
+
+document.onkeydown = keyd;
 
 setup();
