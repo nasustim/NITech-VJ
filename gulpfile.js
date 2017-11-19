@@ -14,30 +14,30 @@ gulp.task("go", function(callback){
         .pipe(babel({
             presets: ['es2015']
         }))
-        .pipe(gulp.dest("./dist/"));
+        .pipe(gulp.dest("./docs/"));
 
 
     gulp.src("./src/scss/common.scss")
         .pipe(scss())
-        .pipe(gulp.dest("./dist/"));
+        .pipe(gulp.dest("./docs/"));
 
 
     for(var i in json_index) {
         gulp.src("./src/scss/"+ i +".scss")
             .pipe(scss())
-            .pipe(gulp.dest("./dist/"+ i + "/"));
+            .pipe(gulp.dest("./docs/"+ i + "/"));
 
         gulp.src("./src/ejs/index.ejs")
             .pipe(plumber())
             .pipe(ejs(json_index[i]))
             .pipe(rename("index.html"))
-            .pipe(gulp.dest("./dist/"+ i +"/"));
+            .pipe(gulp.dest("./docs/"+ i +"/"));
 
 
         gulp.src("./src/js/"+ i +".js")
             .pipe(babel({
                 presets: ['es2015']
             }))
-            .pipe(gulp.dest("./dist/"+ i + "/"));
+            .pipe(gulp.dest("./docs/"+ i + "/"));
     }
 });
