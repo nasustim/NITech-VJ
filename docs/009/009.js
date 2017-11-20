@@ -46,7 +46,7 @@ var init = function init() {
     camera.position.z = radius;
 
     var light = new THREE.DirectionalLight(0xffffff);
-    light.position.set(1000, 1000, 1000).normalize();
+    light.position.set(0, 0, 1000).normalize();
     scene.add(light);
 
     renderer = new THREE.WebGLRenderer({ antialias: true });
@@ -64,79 +64,61 @@ var init = function init() {
 
 var geoInit = function geoInit() {
     geo = new THREE.Geometry();
+
+    cy = [new THREE.Mesh(new THREE.CylinderBufferGeometry(20, 20, 5000, 50), new THREE.MeshPhongMaterial({
+        color: 0xffffff,
+        ambient: 0xffffff,
+        specular: 0xffffff,
+        shininess: 200
+    })), new THREE.Mesh(new THREE.CylinderBufferGeometry(20, 20, 5000, 50), new THREE.MeshPhongMaterial({
+        color: 0xffffff,
+        ambient: 0xffffff,
+        specular: 0xffffff,
+        shininess: 200
+    })), new THREE.Mesh(new THREE.CylinderBufferGeometry(20, 20, 5000, 50), new THREE.MeshPhongMaterial({
+        color: 0xffffff,
+        ambient: 0xffffff,
+        specular: 0xffffff,
+        shininess: 200
+    })), new THREE.Mesh(new THREE.CylinderBufferGeometry(20, 20, 5000, 50), new THREE.MeshPhongMaterial({
+        color: 0xffffff,
+        ambient: 0xffffff,
+        specular: 0xffffff,
+        shininess: 200
+    }))];
 };
 
 var geoUpdate = function geoUpdate(wd) {
-
-    //count++;
-    //count = (count >= 360)? 0 : count;
 
     for (var i = 0; i < 4; i++) {
         step[i]++;
         step[i] = step[i] >= 360 ? 0 : step[i];
     }
 
-    geo = new THREE.Geometry();
+    //geo = new THREE.Geometry();
 
     for (var _i = 0; _i < 4; _i++) {
         scene.remove(cy[_i]);
     }
-    //scene.remove(wireMesh);
-    /*
-        for(let i = 0;i<xp.length;i++){
-            geo.vertices.push(new THREE.Vector3(xp[i], yp[i], 0));
-        }
-    
-        for(let i = 0;i<xp.length;i+=3){
-            geo.faces.push(new THREE.Face3(i,i+1,i+2));
-        }
-    
-        geo.computeFaceNormals();
-    
-        let mat = new THREE.MeshBasicMaterial({color: 0x7777ff, wireframe: true});
-        plane = new THREE.Mesh(geo, mat);
-        scene.add(plane);
-    */
 
-    //let mat = new THREE.MeshBasicMaterial({color: 0x7777ff, wireframe: true});
-    //plane = new THREE.Mesh(geo, mat);
-    cy = [new THREE.Mesh(new THREE.CylinderBufferGeometry(20, 20, 5000, 50), new THREE.MeshPhongMaterial({
-        color: 0xffffff,
-        // ambient:0x777777,
-        specular: 0xffffff,
-        shininess: 200
-    })), new THREE.Mesh(new THREE.CylinderBufferGeometry(20, 20, 5000, 50), new THREE.MeshPhongMaterial({
-        color: 0xffffff,
-        // ambient:0x777777,
-        specular: 0xffffff,
-        shininess: 200
-    })), new THREE.Mesh(new THREE.CylinderBufferGeometry(20, 20, 5000, 50), new THREE.MeshPhongMaterial({
-        color: 0xffffff,
-        // ambient:0x777777,
-        specular: 0xffffff,
-        shininess: 200
-    })), new THREE.Mesh(new THREE.CylinderBufferGeometry(20, 20, 5000, 50), new THREE.MeshPhongMaterial({
-        color: 0xffffff,
-        // ambient:0x777777,
-        specular: 0xffffff,
-        shininess: 200
-    }))];
     for (var _i2 = 0; _i2 < 4; _i2++) {
         cy[_i2].position.set(100 * Math.sin(Math.PI / 180 * step[_i2]), 0, 0);
         scene.add(cy[_i2]);
     }
-
-    /*plane.geometry.verticesNeedUpdate = true;
-    for(let i = 0;i<plane.geometry.vertices.length;i++){
-        let vertex = plane.geometry.vertices[i];
-        let fl = (Math.floor(Math.random()*10)%2===0)?-1:1;
-        let fs = (Math.floor(Math.random()*10)%2===0)?-1:1;
-        // vertex.z = wd[i%wd.length]*scale*fl;
-        // vertex.y = wd[i%wd.length]*scale*fs;
-        vertex.z = wd[0]*scale*fl;
-        vertex.y = ((wd[1]+wd[0])/2)*scale*fs*xp[i];
-        //vertex.x = wd[i%wd.length]*1000000*fs;
-    }*/
+    /*
+        for(let j=0;j<4;j++) {
+            cy[j].geometry.verticesNeedUpdate = true;
+            for (let i = 0; i < cy[j].geometry.vertices.length; i++) {
+                let vertex = cy[j].geometry.vertices[i];
+                let fl = (Math.floor(Math.random() * 10) % 2 === 0) ? -1 : 1;
+                let fs = (Math.floor(Math.random() * 10) % 2 === 0) ? -1 : 1;
+                // vertex.z = wd[i%wd.length]*scale*fl;
+                // vertex.y = wd[i%wd.length]*scale*fs;
+                vertex.z = wd[0] * scale * fl;
+                vertex.y = ((wd[1] + wd[0]) / 2) * scale * fs;
+                //vertex.x = wd[i%wd.length]*1000000*fs;
+            }
+        }*/
 };
 
 var setup = function setup() {
