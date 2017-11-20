@@ -78,5 +78,15 @@
       "SCRIPTS": [
         "https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"
       ]
+    },
+
+    "009":{
+      "ID": "009",
+      "STYLES": [
+
+      ],
+      "SCRIPTS": [
+        "../three/build/three.min.js"
+      ]
     }
   }
