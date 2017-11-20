@@ -68,5 +68,15 @@
       "SCRIPTS": [
         "https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"
       ]
+    },
+
+    "008":{
+      "ID": "008",
+      "STYLES": [
+
+      ],
+      "SCRIPTS": [
+        "https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"
+      ]
     }
   }
