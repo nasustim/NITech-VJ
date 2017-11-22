@@ -1,6 +1,6 @@
 var setup = () => {
     //init();
-    window.addEventListener("resize", resize, false);
+    //window.addEventListener("resize", resize, false);
     draw();
 }
 function draw(){
