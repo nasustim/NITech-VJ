@@ -1,5 +1,5 @@
 var setup = () => {
-    init();
+    //init();
     window.addEventListener("resize", resize, false);
     draw();
 }
@@ -12,7 +12,7 @@ var keyd = () =>{
     console.log(`${event.key}`);
 
     //if(event.key == "1"){
-    angle = 2 * Math.PI * parseInt(event.key) / 9;
+    //angle = 2 * Math.PI * parseInt(event.key) / 9;
     //}
 }
 
