@@ -58,9 +58,9 @@ var draw = () =>{
 
     for(let i in timing){
         if( timing[i] === count ){
-            ctx.filter = `blur(${ Math.floor( Math.random() * 20 ) + 18 - 25 }px`;
+            ctx.filter = `blur(${ Math.floor( Math.random() * 20 ) + 18 }px`;
             ctx.fillStyle = color[i];
-            ctx.ellipse(x[i], y[i], 300+Math.floor( Math.random() * 40 ) , 200, 90 * Math.PI/180, 0, 2 * Math.PI);
+            ctx.ellipse(x[i], y[i], 300+Math.floor( Math.random() * 40 )  - 20 , 200, 90 * Math.PI/180, 0, 2 * Math.PI);
             ctx.fill();
         }else if( timing[i] === count+1 ){
             ctx.filter = 'blur(20px)';
