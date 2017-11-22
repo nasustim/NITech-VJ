@@ -2,19 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5c0a1102-f44c-42af-8f15-315a53e427dc" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.sass-cache/55158ed93904b3a590eaa25a93639ad22ab49dea/001.scssc" afterPath="$PROJECT_DIR$/.sass-cache/55158ed93904b3a590eaa25a93639ad22ab49dea/001.scssc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.sass-cache/55158ed93904b3a590eaa25a93639ad22ab49dea/002.scssc" afterPath="$PROJECT_DIR$/.sass-cache/55158ed93904b3a590eaa25a93639ad22ab49dea/002.scssc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.sass-cache/55158ed93904b3a590eaa25a93639ad22ab49dea/003.scssc" afterPath="$PROJECT_DIR$/.sass-cache/55158ed93904b3a590eaa25a93639ad22ab49dea/003.scssc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.sass-cache/55158ed93904b3a590eaa25a93639ad22ab49dea/004.scssc" afterPath="$PROJECT_DIR$/.sass-cache/55158ed93904b3a590eaa25a93639ad22ab49dea/004.scssc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.sass-cache/55158ed93904b3a590eaa25a93639ad22ab49dea/005.scssc" afterPath="$PROJECT_DIR$/.sass-cache/55158ed93904b3a590eaa25a93639ad22ab49dea/005.scssc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.sass-cache/55158ed93904b3a590eaa25a93639ad22ab49dea/006.scssc" afterPath="$PROJECT_DIR$/.sass-cache/55158ed93904b3a590eaa25a93639ad22ab49dea/006.scssc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.sass-cache/55158ed93904b3a590eaa25a93639ad22ab49dea/007.scssc" afterPath="$PROJECT_DIR$/.sass-cache/55158ed93904b3a590eaa25a93639ad22ab49dea/007.scssc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.sass-cache/55158ed93904b3a590eaa25a93639ad22ab49dea/008.scssc" afterPath="$PROJECT_DIR$/.sass-cache/55158ed93904b3a590eaa25a93639ad22ab49dea/008.scssc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.sass-cache/55158ed93904b3a590eaa25a93639ad22ab49dea/009.scssc" afterPath="$PROJECT_DIR$/.sass-cache/55158ed93904b3a590eaa25a93639ad22ab49dea/009.scssc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.sass-cache/55158ed93904b3a590eaa25a93639ad22ab49dea/111.scssc" afterPath="$PROJECT_DIR$/.sass-cache/55158ed93904b3a590eaa25a93639ad22ab49dea/111.scssc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.sass-cache/55158ed93904b3a590eaa25a93639ad22ab49dea/common.scssc" afterPath="$PROJECT_DIR$/.sass-cache/55158ed93904b3a590eaa25a93639ad22ab49dea/common.scssc" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/json/objects.json" afterPath="$PROJECT_DIR$/src/json/objects.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/010/010.js" afterPath="$PROJECT_DIR$/docs/010/010.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/js/010.js" afterPath="$PROJECT_DIR$/src/js/010.js" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -48,8 +38,8 @@
       <file leaf-file-name="010.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/js/010.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="428">
-              <caret line="49" column="28" lean-forward="false" selection-start-line="49" selection-start-column="28" selection-end-line="49" selection-end-column="28" />
+            <state relative-caret-position="593">
+              <caret line="60" column="76" lean-forward="false" selection-start-line="60" selection-start-column="76" selection-end-line="60" selection-end-column="76" />
               <folding />
             </state>
           </provider>
@@ -195,12 +185,12 @@
       <option name="presentableId" value="Default" />
       <updated>1511089364616</updated>
       <workItem from="1511089365688" duration="15506000" />
-      <workItem from="1511361556057" duration="2637000" />
+      <workItem from="1511361556057" duration="2914000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="18749000" />
+    <option name="totallyTimeSpent" value="19026000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
@@ -609,8 +599,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/js/010.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="428">
-          <caret line="49" column="28" lean-forward="false" selection-start-line="49" selection-start-column="28" selection-end-line="49" selection-end-column="28" />
+        <state relative-caret-position="593">
+          <caret line="60" column="76" lean-forward="false" selection-start-line="60" selection-start-column="76" selection-end-line="60" selection-end-column="76" />
           <folding />
         </state>
       </provider>

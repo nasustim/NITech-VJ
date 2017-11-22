@@ -48,7 +48,7 @@ var draw = function draw() {
         x = [];
         y = [];
         color = [];
-        for (var i = 0; i < 40; i++) {
+        for (var i = 0; i < 33; i++) {
             timing.push(Math.floor(Math.random() * 360));
             x.push(Math.floor(Math.random() * w));
             y.push(Math.floor(Math.random() * h / 2));
@@ -59,14 +59,14 @@ var draw = function draw() {
 
     for (var _i in timing) {
         if (timing[_i] === count) {
-            ctx.filter = 'blur(20px)';
+            ctx.filter = "blur(" + (Math.floor(Math.random() * 20) + 18 - 25) + "px";
             ctx.fillStyle = color[_i];
-            ctx.ellipse(x[_i], y[_i], 300, 200, 90 * Math.PI / 180, 0, 2 * Math.PI);
+            ctx.ellipse(x[_i], y[_i], 300 + Math.floor(Math.random() * 40), 200, 90 * Math.PI / 180, 0, 2 * Math.PI);
             ctx.fill();
         } else if (timing[_i] === count + 1) {
             ctx.filter = 'blur(20px)';
             ctx.fillStyle = color[_i];
-            ctx.ellipse(x[_i], y[_i] + h / 2, 300, 200, 90 * Math.PI / 180, 0, 2 * Math.PI);
+            ctx.ellipse(x[_i], y[_i] + h / 2, 300 + Math.floor(Math.random() * 40), 200 + Math.floor(Math.random() * 40), 90 * Math.PI / 180, 0, 2 * Math.PI);
             ctx.fill();
         }
     }
