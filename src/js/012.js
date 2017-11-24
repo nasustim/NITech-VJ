@@ -97,13 +97,13 @@ var geoInit = () =>{
 }
 
 var geoUpdate = (wd) =>{
-    if(wd[0]<=10 && flag === true){
+    if(wd[0]<=D_MAX && flag === true){
         
         scene.remove(plane);
         geoInit();
         flag = false;
     }
-    if(wd[0]>10){
+    if(wd[0]>D_MAX){
         flag = true;
     }
     plane.geometry.verticesNeedUpdate = true;

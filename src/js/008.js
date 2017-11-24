@@ -58,7 +58,7 @@ var draw = () =>{
     //console.log(bx[x[count]]);
     //console.log(bw[x[count]]);
 
-        if (s[0] > 120 && flag === false) {
+        if (s[0] > D_MAX && flag === false) {
 
             //console.log(ay[k%4]);
             flag = true;

@@ -5,6 +5,8 @@ var filter = context.createBiquadFilter();
 filter.type = 0;
 filter.frequency.value = 440;
 
+const D_MAX = 78;
+
 const analyzer = context.createAnalyser();
 
 navigator.getUserMedia = (navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia);
