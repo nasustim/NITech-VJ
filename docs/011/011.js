@@ -92,11 +92,11 @@ var geoInit = function geoInit() {
 };
 
 var geoUpdate = function geoUpdate(wd) {
-    if (wd[0] <= 50 && flag === true) {
+    if (wd[0] <= 5 && flag === true) {
         geoInit();
         flag = false;
     }
-    if (wd[0] > 50) {
+    if (wd[0] > 5) {
         flag = true;
     }
     plane.geometry.verticesNeedUpdate = true;
