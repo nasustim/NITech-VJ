@@ -3,3 +3,6 @@ package-lock.json
 .idea/
 .sass-cache/
 .gulp-scss-cache/
+
+.DS_Store
+.vscode/
